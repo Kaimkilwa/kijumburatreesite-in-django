@@ -1,0 +1,30 @@
+ 
+{% extends "users/base.html" %}
+
+{% block content %}
+
+<section class="showcase">
+  <div class="row">
+
+     <div class="col-md-12">
+       <h1 style=" text-align: center"> Contact</h1>
+     </div>
+  </div>
+
+    <div class="badge badge-pill badge-success">
+
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img">
+        
+        </div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h4> you have succdessifully logedout </h4>
+          <a href="{% url 'login'%}" class=" btn btn-primary"> login back to th system</a>
+         
+      
+        </div>
+      </div>
+    </div>
+ 
+  </section>
+{%endblock%}

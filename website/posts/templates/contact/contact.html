@@ -1,0 +1,56 @@
+
+{% extends "contact/base.html" %}
+
+{% block content %}
+
+<section class="showcase">
+  <div class="row">
+
+     <div class="col-md-12">
+       <h1 style=" text-align: center"> Contact</h1>
+     </div>
+  </div>
+{%for contact in contact_info %}
+    <div class="container-fluid p-0">
+<section class="call-to-action text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h2 class="mb-4">Let know What your think about our service</h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form action="/AddMesage/" method="posts">{% csrf_token %}
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" name="email" placeholder="Enter your email...">
+                <textarea name="Description" cols="70" rows="5" name="message" class="form-control form-control-lg" id="id_message">Enter message</textarea>
+               
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn btn-success">submit!</button>
+               
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15953.560776909184!2d31.14034996130344!3d-1.5330534821118196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19da5920ee25d211%3A0xc8025d99b91add8b!2sKayanga!5e0!3m2!1sen!2stz!4v1568741835491!5m2!1sen!2stz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+        <p><h1>{{contact.PHone_number}}</h1></p>
+        <p><h3>{{contact.adress|linebreaks|safe}}</h1></p>
+       
+          <p>{{contact.created_on}}</p>
+         
+           <a href="{% url 'home'%}" class=" btn btn-success"> <- Back to hom Page</a>
+        </div>
+      </div>
+    </div>
+  {%endfor%}
+  </section>
+{%endblock%}

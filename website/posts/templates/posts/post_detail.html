@@ -1,0 +1,30 @@
+
+{% extends "posts/base.html" %}
+
+{% block content %}
+
+<section class="showcase">
+  <div class="row">
+
+     <div class="col-md-12">
+       <h1 style=" text-align: center"> What we do</h1>
+     </div>
+  </div>
+
+    <div class="container-fluid p-0">
+
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img">
+           <img  src="{{ post.document.url}}" alt="{{ post.title }}">
+        </div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>{{post.title}}</h2>
+          <h5 >created  {{post.created_on}} <br> created by :{{post.author}}</h5>
+          <p class="lead mb-0">{{post.content|linebreaks}}</p>
+           <a href="{% url 'home'%}"> <- Back to hom Page</a>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+{%endblock%}

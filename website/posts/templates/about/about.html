@@ -1,0 +1,57 @@
+
+{% extends "contact/base.html" %}
+
+{% block content %}
+
+{%load static  %}
+
+
+
+<section class="showcase" s>
+  <div class="row">
+
+     <div class="col-md-12">
+       <h1 style=" text-align: center"> About us</h1>
+     </div>
+  </div>
+{% for obj in obj_about %}
+    <div class="container-fluid p-0">
+<section class="call-to-action text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h2 class="mb-4">WHAT IS ABOUT KIJUMBURA TREE GROWERS CAMPANY (KTG)</h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          
+        </div>
+      </div>
+    </div>
+  </section>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img">
+            <img  class="bd-placeholder-img" width="100%" height="50%" src=" {% static 'posts/img/structure.jpg'%}">
+         <!--   <img src="" alt=" no upload yet"> -->
+        </div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <p><h1> {{obj.title}}</h1></p>
+          <small>{{obj.subtitle}}}</small>
+          <p>{{obj.content|linebreaks}}</p>
+           <H1>  OUR VISION</H1>
+           <p>{{obj.vision}}</p>
+          <H1> OUR MISSION</H1>
+          <p>{{obj.mission}}</p>
+          <H1> OUR OBJECTIVE AND AIM</H1>
+          <p>{{obj.objective_aim}}</p>
+          <H1>ORGAniza TION STRUCTURE</H1>
+          <p>{{obj.organisation_structure}}</p>
+
+           
+           <a href="{% url 'home'%}"> <- Back to hom Page</a>
+        </div>
+      </div>
+    </div>
+  {%endfor%}
+  </section>
+{%endblock%}
